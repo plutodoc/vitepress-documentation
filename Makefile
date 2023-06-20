@@ -1,24 +1,24 @@
 .POSIX:
 SHELL := /bin/bash
-PNPM :=  $(shell which pnpm)
+YARN :=  $(shell which yarn)
 # Build the application
 .PHONY: build
 build:
 	@echo -e "\033[32mBuilding the application...\033[0m"
-	$(PNPM) run build
+	$(YARN) run build
 	@echo -e "\033[32mBuild finished.\033[0m"
 # Build the application
 build-local:
 	@echo -e "\033[32mBuilding the application...\033[0m"
-	$(PNPM) run build:local
+	$(YARN) run build:local
 	@echo -e "\033[32mBuild finished.\033[0m"
 # Local development
 dev:
-	$(PNPM) run dev
+	$(YARN) run dev
 # Install dependencies
 install:
 	@echo -e "\033[32mInstalling dependencies...\033[0m"
-	$(PNPM) install
+	$(YARN) install
 	@echo -e "\033[32mDependencies installed.\033[0m"
 deploy: pull build-local
 	rsync -av --delete ./.vitepress/dist/ justin@192.168.31.49:/share/Web/vitepress-documentation
