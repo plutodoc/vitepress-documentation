@@ -1,0 +1,17 @@
+### VitePress ###
+# Dependencies
+node_modules/
+
+# Production
+dist/
+
+# Generated files
+cache/
+
+# Misc
+.DS_Store
+
+# Editor
+.idea/
+.vscode/*
+!.vscode/extensions.json
